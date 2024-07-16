@@ -1,7 +1,7 @@
 import React from "react";
 import { CardItems } from "./static/db";
-import CustomCard from "./components/customCard";
 import cardStyle from "./components/customCard/card.module.scss";
+import CustomCard from "./components/customCard";
 
 const App = () => {
   return (
