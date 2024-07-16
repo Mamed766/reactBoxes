@@ -1,25 +1,24 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import { CardItems } from "./static/db";
+import CustomCard from "./components/customCard";
+import cardStyle from "./components/customCard/card.module.scss";
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <>
+      <div className={cardStyle.responsive__grid}>
+        {CardItems &&
+          CardItems.map((card, index) => (
+            <CustomCard
+              key={card.id}
+              icon={card.icon}
+              title={card.title}
+              desc={card.desc}
+            />
+          ))}
+      </div>
+    </>
   );
-}
+};
 
 export default App;
